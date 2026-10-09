@@ -2,3 +2,4 @@ context
 node_modules
 .env
 dist
+.pnpm-store
