@@ -1,8 +1,112 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+ :root { --background: #f8fafc; --foreground: #0f172a; --muted: #475569; --accent: #38bdf8; }
+.dark { --background: #0f172a; --foreground: #f8fafc; --muted: #cbd5e1; --accent: #7dd3fc; }
+* {
+  box-sizing: border-box;
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, sans-serif;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.shell {
+  width: min(960px, calc(100% - 40px));
+  margin: auto;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.hero,
+.stack {
+  width: min(520px, 100%);
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  margin: 14px 0 24px;
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+.eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+.muted {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+button {
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #0f172a;
+  cursor: pointer;
+  font: inherit;
+  padding: 12px 18px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 40px #1720330d;
+}
+.form {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+label {
+  display: grid;
+  gap: 7px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+input {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 12px;
+  font: inherit;
+}
+.error {
+  color: #b42318;
+  font-size: 0.9rem;
+}
+.center {
+  text-align: center;
+}
+.dashboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 36px;
+  align-items: start;
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #eef0f6;
+}
+@media (max-width: 650px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
 }
 
 @theme inline {
@@ -10,17 +114,4 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
