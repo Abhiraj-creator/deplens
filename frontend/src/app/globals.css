@@ -1,17 +1,13 @@
 @import "tailwindcss";
 
-:root {
-  --ink: #172033;
-  --muted: #667085;
-  --line: #e5e7eb;
-  --accent: #635bff;
-}
+ :root { --background: #f8fafc; --foreground: #0f172a; --muted: #475569; --accent: #38bdf8; }
+.dark { --background: #0f172a; --foreground: #f8fafc; --muted: #cbd5e1; --accent: #7dd3fc; }
 * {
   box-sizing: border-box;
 }
 body {
-  background: #f8f9fc;
-  color: var(--ink);
+  background: var(--background);
+  color: var(--foreground);
   font-family: Arial, sans-serif;
 }
 a {
@@ -54,20 +50,14 @@ h1 {
   gap: 12px;
   margin-top: 32px;
 }
-.button,
 button {
   border: 0;
   border-radius: 10px;
   background: var(--accent);
-  color: #fff;
+  color: #0f172a;
   cursor: pointer;
   font: inherit;
   padding: 12px 18px;
-}
-.secondary {
-  background: #fff;
-  color: var(--ink);
-  border: 1px solid var(--line);
 }
 .card {
   background: #fff;
@@ -119,27 +109,9 @@ input {
   }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
