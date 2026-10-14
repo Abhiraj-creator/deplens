@@ -24,7 +24,7 @@ Set `frontend/.env.local` to `NEXT_PUBLIC_API_URL=http://localhost:4000` when th
 ```bash
 curl -X POST http://localhost:4000/api/v1/auth/register \
   -H 'Content-Type: application/json' \
-  -d '{"name":"Ada","email":"ada@example.com","password":"correct horse battery staple"}'
+  -d '{"name":"Ada","email":"ada@example.com","password":"CorrectHorseBattery1"}'
 curl http://localhost:4000/api/v1/auth/me -H 'Authorization: Bearer ACCESS_TOKEN'
 curl -X POST http://localhost:4000/api/v1/auth/refresh --cookie 'refreshToken=COOKIE_VALUE'
 curl -X POST http://localhost:4000/api/v1/auth/logout
